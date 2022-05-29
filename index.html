@@ -8,24 +8,29 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-    <!-- High Score and Countdown Timer at top of page-->
-    <div class="toptext">
-        <p id="highscore">Get High Score</p>
-        <p id="countdown">90 seconds</p>
-    </div>
     <!-- Start Page -->
     <section class="start-page">   
+        <!-- High Score at top of page-->
+        <div class="toptext">
+            <p id="highscore">Get High Score</p>
+        </div>
         <h1>Coding Quiz</h1>
-        <p id="directions">Answer the questions before the clock runs out!</p>
-        <button id="startBtn">Start Quiz</button>
+            <p id="directions">Answer the questions before the clock runs out!</p>
+            <button id="startBtn">Start Quiz</button>
     </section>
     
     <!--Quiz-->
     <section class="hide" id="quiz">
-        <!-- Space for question- USE JAVASCRIPT??-->
+        <!-- High Score and Countdown Timer at top of page-->
+        <div class="toptext">
+            <p id="highscore">Get High Score</p>
+            <p class="timer" id="countdown">90 seconds</p>
+        </div>
+        <!-- Questions -->
         <div id="question">
 
         </div>
+        <!-- Answer Choices-->
         <div id="answer-choices"></div>
             <form id="choices" action="???????DETERMINE">
                 <button type="submit" formaction="#">1</button>

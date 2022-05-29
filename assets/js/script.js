@@ -1,4 +1,5 @@
-var countdown; 
+var countdown = 90; 
+
 var questions =[
     {
         header:"Question 1",
@@ -17,10 +18,46 @@ var questions =[
             "choice 3",
             "choice 4"
         ]
+    },
+    {
+        header:"Question 3",
+        choices: [
+            "choice 1",
+            "choice 2",
+            "choice 3",
+            "choice 4"
+        ]
+    }, 
+    {
+        header:"Question 4",
+        choices: [
+            "choice 1",
+            "choice 2",
+            "choice 3",
+            "choice 4"
+        ]
+    }, 
+    {
+        header:"Question 5",
+        choices: [
+            "choice 1",
+            "choice 2",
+            "choice 3",
+            "choice 4"
+        ]
     }
 ];
 var showQuestions = function() {
     console.log(questions[0].header);
+    var interval = setInterval(function() {
+        document.getElementById("countdown").innerHTML=countdown; 
+        countdown--;
+        if (count === 0){
+            clearInterval(interval);
+            document.getElementById("countdown").innerHTML="Done";
+            alert("You're out of time!");
+        }
+    }, 1000);
 }
 
 //Start Button
@@ -40,6 +77,7 @@ startButton.addEventListener("click", function() {
 showQuestions();
 
 })
+
 
 
 //Timer begins counting back when start button is pushed
