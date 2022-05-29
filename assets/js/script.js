@@ -45,7 +45,16 @@ var questions =[
             "choice 3",
             "choice 4"
         ]
-    }
+    },
+    {
+        header:"Question 6",
+        choices: [
+            "choice 1",
+            "choice 2",
+            "choice 3",
+            "choice 4"
+        ]
+    },
 ];
 var showQuestions = function() {
     console.log(questions[0].header);
