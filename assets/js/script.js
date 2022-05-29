@@ -1,4 +1,4 @@
-var countdown = 90; 
+var countdown = 10; 
 
 var questions =[
     {
@@ -58,15 +58,17 @@ var questions =[
 ];
 var showQuestions = function() {
     console.log(questions[0].header);
-    var interval = setInterval(function() {
+    //Run countdown timer when taken to questions
+    var timer = setInterval(function() {
         document.getElementById("countdown").innerHTML=countdown; 
         countdown--;
-        if (count === 0){
-            clearInterval(interval);
-            document.getElementById("countdown").innerHTML="Done";
-            alert("You're out of time!");
+        if (countdown === 0) {
+            clearInterval(timer);
+            document.getElementById("countdown");
         }
     }, 1000);
+    //Questions
+    
 }
 
 //Start Button
