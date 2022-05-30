@@ -1,32 +1,8 @@
-//Click Start Button on Start Page to begin quiz
-var startButton = document.getElementById("startBtn")
-    //console.log(startButton);
-
-startButton.addEventListener("click", function() {
-    var startPage = document.querySelector(".start-page")
-    //HIDE the start page when button is clicked
-    startPage.classList.add("hide")
-
-    var quizSection = document.getElementById("quiz")
-        console.log(quizSection);
-        //remove HIDE from quiz
-        quizSection.classList.remove("hide")
-
-showQuestions();
-
-})
-
-var countdown = 15; 
-
-var choice1 = document.getElementById("btn1");
-var choice2 = document.getElementById("btn2");
-var choice3 = document.getElementById("btn3");
-var choice4 = document.getElementById("btn4");
-
-
+//Questions Array
 var myQuestions = [
     {
-        question:"Which is NOT a JavaScript data type?",
+        number: 1,
+        question: "Which is NOT a JavaScript data type?",
         choices: [
             "1. Boolean",
             "2. String",
@@ -36,7 +12,8 @@ var myQuestions = [
         correct: "4",
     },
     {
-        question:"What are variables in JavaScript?",
+        number: 2,
+        question: "What are variables in JavaScript?",
         choices: [
             "1. Assignment operators",
             "2. Containers that store data values",
@@ -46,6 +23,7 @@ var myQuestions = [
         correct: "2",
     },
     {
+        number: 3, 
         question:"What is a function in JavaScript?",
         choices: [
             "1. A list containing multiple vlaues",
@@ -56,6 +34,7 @@ var myQuestions = [
         correct: "4",
     }, 
     {
+        number: 4,
         question:"Items in arrays are numbered. This number is called the item's _____.",
         choices: [
             "1. Index",
@@ -66,6 +45,7 @@ var myQuestions = [
         correct: "1",
     }, 
     {
+        number: 5,
         question:"Which type of brackets are used to define the paremeters of a function in JavaScript?",
         choices: [
             "1. <>",
@@ -78,9 +58,43 @@ var myQuestions = [
     
 ];
 
+//Creating variables for needed elements
+var startButton = document.getElementById("startBtn")
+    //console.log(startButton);
+var countdown = 15;
+
+//When clicking "Start Quiz" on start page
+startButton.addEventListener("click", function() {
+    var startPage = document.querySelector(".start-page")
+    //HIDE the start page when button is clicked
+    startPage.classList.add("hide")
+    //call the quiz section
+    var quizSection = document.getElementById("quiz")
+        console.log(quizSection);
+        //remove HIDE from quiz
+        quizSection.classList.remove("hide")
+//Display questions      
+showQuestions();
+})
+
+
+
+
 //Begin Quiz
 var showQuestions = function() {
+    //Show Questions
+    var questionSection = document.getElementById("question-title");
+        questionSection.classList.add("question")
+        console.log(this.question);
+        for (var i=0; i < myQuestions.length; i++) {
+        var thisItem= myQuestions[i];
+           console.log(thisItem);
+        }
     //console.log(myQuestions.question);
+    var choice1 = document.getElementById("btn1");
+    var choice2 = document.getElementById("btn2");
+    var choice3 = document.getElementById("btn3");
+    var choice4 = document.getElementById("btn4");
     
     //Run countdown timer when taken to questions
     var seconds = setInterval(function() {
@@ -92,12 +106,6 @@ var showQuestions = function() {
         }
     }, 1000);
 
-    //Show Questions
-    for (var i=0; i < myQuestions.length; i++) {
-        var thisItem= myQuestions[i];
-            console.log(thisItem);
-        var questionSection = document.getElementById("question-title")
-            questionSection.classList.add("question")
-            console.log(this.question);
-    }
+
+  
 }
