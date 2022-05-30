@@ -61,7 +61,17 @@ var myQuestions = [
 //Creating variables for needed elements
 var startButton = document.getElementById("startBtn")
     //console.log(startButton);
-var countdown = 15;
+//Latest additions
+var questionTitle = document.querySelector(".question-title");
+    console.log(questionTitle);
+var questionResult = document.getElementById("result");
+var answerChoices = document.querySelector(".answer-choices");
+var choiceList  = document.querySelector(".choices");
+//buttons for answer choices
+var choice1 = document.getElementById("btn1");
+var choice2 = document.getElementById("btn2");
+var choice3 = document.getElementById("btn3");
+var choice4 = document.getElementById("btn4");
 
 //When clicking "Start Quiz" on start page
 startButton.addEventListener("click", function() {
@@ -77,31 +87,37 @@ startButton.addEventListener("click", function() {
 showQuestions();
 })
 
-
+//Variables for while quiz is running
+var countdown = 15;
+var questionNumber = 1;
+var result = "";
 
 
 //Begin Quiz
 var showQuestions = function() {
+    //SOMETHING HERE
+    /*
+    var myQuestions = '<div class="answer-choices"><span>'+ question[index].choices[0] +'</span></div>'
+    + '<div class="answer-choices"><span>'+ question[index].choices[1] +'</span></div>'
+    + '<div class="answer-choices"><span>'+ question[index].choices[2] +'</span></div>'
+    + '<div class="answer-choices"><span>'+ question[index].choices[3] +'</span></div>'
+    + '<div class="answer-choices"><span>'+ question[index].choices[4] +'</span></div>';
+    //que_text.innerHTML = que_tag; //adding new span tag inside que_tag
+    //option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+    */
     //Show Questions
-    var questionSection = document.getElementById("question-title");
-        questionSection.classList.add("question")
-        console.log(this.question);
-        for (var i=0; i < myQuestions.length; i++) {
-        var thisItem= myQuestions[i];
-           console.log(thisItem);
+        for (var i = 0; i < myQuestions.length; i++) {
+            var thisItem = myQuestions[i];
+            console.log(thisItem);
         }
     //console.log(myQuestions.question);
-    var choice1 = document.getElementById("btn1");
-    var choice2 = document.getElementById("btn2");
-    var choice3 = document.getElementById("btn3");
-    var choice4 = document.getElementById("btn4");
-    
+
     //Run countdown timer when taken to questions
-    var seconds = setInterval(function() {
+    var startTimer = setInterval(function() {
         document.getElementById("countdown").innerHTML=countdown; 
         countdown--;
         if (countdown === 0) {
-            clearInterval(seconds);
+            clearInterval(startTimer);
             document.getElementById("countdown");
         }
     }, 1000);

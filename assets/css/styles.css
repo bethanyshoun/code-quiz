@@ -36,6 +36,13 @@ h1 {
     margin: 0;
 }
 
+#time-unit {
+    text-align: right;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
 #time-left-text {
     text-align: left;
     font-size: 20px;
@@ -62,6 +69,7 @@ h1 {
     display: inline-flex;
     flex-direction: column;
 }
+
 button {
     color: purple;
     font-size: 50px;
