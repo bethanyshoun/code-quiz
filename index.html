@@ -26,26 +26,43 @@
             <a id="highscore" href="./highscores.html">Get High Score</a>
             <p id="time-left-text">Time Left:</p>
             <p class="timer" id="countdown">Timer</p><p id="time-unit">Seconds</p>
+            <!-- <p class="timesup" id="hide">0</p> -->
         </div>
-        <!-- Questions -->
-        <div class="question">
-            <p id="question-title"></p>
+        <div class="quiz-box">
+            <!-- Questions -->
+            <h2 id="question">What is the answer to this question?</h2>
+            <!-- Answer Choices-->
+            <div class="answer-choices">
+                <!-- 
+                <form class="choice-btns" id="questionNumber">
+                    <button type="submit" id="btn1"></button>
+                    <button type="submit" id="btn2"></button>
+                    <button type="submit" id="btn3"></button>
+                    <button type="submit" id="btn4"></button>
+                </form>
+                -->
+                <p class="choice-letter">A</p>
+                <p class="choice-text" data-number="1">Choice 1</p>
+            </div>
+            <div class="answer-choices">
+             <p class="choice-letter">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>   
+            <div class="answer-choices">
+                <p class="choice-letter">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>   
+            <div class="answer-choices">
+                <p class="choice-letter">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
+            </div>  
+            <!-- Show result correct or incorrect -->
+            <div id="result"></div>
         </div>
-        <!-- Answer Choices-->
-        <div class="answer-choices">
-            <form class="choices" id="questionNumber">
-                <button type="submit" id="btn1"></button>
-                <button type="submit" id="btn2"></button>
-                <button type="submit" id="btn3"></button>
-                <button type="submit" id="btn4"></button>
-          </form>
-        </div>
-        <div id="result">
-            
-        </div>
-       
     </section>
+
     <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>

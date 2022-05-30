@@ -7,3 +7,5 @@ For countdown timer consideration: https://www.codegrepper.com/code-examples/jav
 https://stackoverflow.com/questions/65372107/how-to-restart-countdown-timer-and-why-is-it-skipping-seconds
 
 For running arrays through fucntions https://www.codingnepalweb.com/quiz-app-with-timer-javascript/
+
+Structuring chocies in HTML: https://youtu.be/zZdQGs62cR8
