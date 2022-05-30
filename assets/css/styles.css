@@ -2,15 +2,31 @@
     color: mediumaquamarine;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+/* for quiz page */
 h1 {
     text-align: center;
     font-size: 80px;
 }
+/* h1 for highscores page */
+.end-scorepage {
+    text-align: center;
+    font-size: 60px;
+}
 
-#directions {
+
+/* for quiz page */
+h2 {
     text-align: center;
     font-size: 40px;
+}
+/* h2 for higschores page */
+.see-scorepage {
+    text-align: center;
+    font-size: 40px;
+}
+#directions {
+    text-align: center;
+    font-size: 30px;
    
 }
 
@@ -44,7 +60,7 @@ button {
     padding: 0;
 }
 
-#highscore {
+#highscore, #quiz-start-page {
     text-align: left;
     font-size: 20px;
     color: blueviolet;
@@ -72,19 +88,6 @@ button {
     margin: 0;
 }
 
-h2 {
-    text-align: center;
-    font-size: 40px;
-}
-
-/*
-.question {
-    display: inline-flex;
-    justify-content: space-around;
-    margin: 20px;
-    padding: 20px;
-}
-*/
 .answer-choices {
     display: flex;
     margin: 4px;
@@ -107,4 +110,5 @@ h2 {
 
 .choice-text {
     padding: 8px; 
+    width: 100%;
 }

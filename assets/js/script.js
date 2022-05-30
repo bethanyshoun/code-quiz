@@ -3,10 +3,10 @@ var question = document.getElementById("question");
     console.log(question);
 var choiceList = Array.from(document.getElementsByClassName("choice-text"));
 //Variables for while quiz is running
-var countdown = 5;
+var countdown = 15;
 var currentQuestion = {};
 var questionCounter = 0;
-var acceptingAnswers = true;
+var acceptAnswers = false;
 var availableQuestions = [];
 var inncorrectDeduction = -5;
 var maxQuestions = 5;
@@ -14,7 +14,6 @@ var maxQuestions = 5;
 //Questions Array ✔️
 var myQuestions= [
     {
-        //`number: 1,
         question: "Which is NOT a JavaScript data type?",
         choice1: "Boolean",
         choice2: "String",
@@ -23,7 +22,6 @@ var myQuestions= [
         correct: "4",
     },
     {
-        //number: 2,
         question: "What are variables in JavaScript?",
         choice1: "Assignment operators",
         choice2: "Containers that store data values",
@@ -32,7 +30,6 @@ var myQuestions= [
         correct: "2",
     },
     {
-        //number: 3, 
         question:"What is a function in JavaScript?",
         choice1: "A list containing multiple vlaues",
         choice2: "An object passed through curly brackets",
@@ -41,7 +38,6 @@ var myQuestions= [
         correct: "4",
     }, 
     {
-        //number: 4,
         question:"Items in arrays are numbered. This number is called the item's _____.",
         choice1: "Index",
         choice2: "Math Floor",
@@ -50,7 +46,6 @@ var myQuestions= [
         correct: "1",
     }, 
     {
-        //number: 5,
         question:"Which type of brackets are used to define the paremeters of a function in JavaScript?",
         choice1: "<>",
         choice2: "{}",
@@ -60,74 +55,7 @@ var myQuestions= [
     }
     
 ];
-/* commented out different version of array
-var myQuestions = [
-    {
-        number: 1,
-        question: "Which is NOT a JavaScript data type?",
-        choices: [
-            "1. Boolean",
-            "2. String",
-            "3. Number",
-            "4. Declaration"
-        ],
-        correct: "4",
-    },
-    {
-        number: 2,
-        question: "What are variables in JavaScript?",
-        choices: [
-            "1. Assignment operators",
-            "2. Containers that store data values",
-            "3. Browser developer tools",
-            "4. Programming lannguages"
-        ],
-        correct: "2",
-    },
-    {
-        number: 3, 
-        question:"What is a function in JavaScript?",
-        choices: [
-            "1. A list containing multiple vlaues",
-            "2. An object passed through curly brackets",
-            "3. A parameter with a keyword and value",
-            "4. A block of code designed to perform a given task"
-        ],
-        correct: "4",
-    }, 
-    {
-        number: 4,
-        question:"Items in arrays are numbered. This number is called the item's _____.",
-        choices: [
-            "1. Index",
-            "2. Math Floor",
-            "3. Property",
-            "4. Value"
-        ],
-        correct: "1",
-    }, 
-    {
-        number: 5,
-        question:"Which type of brackets are used to define the paremeters of a function in JavaScript?",
-        choices: [
-            "1. <>",
-            "2. {}",
-            "3. ()",
-            "4. []"
-        ],
-        correct: "3"
-    }
-    
-];
-*/
 
-/*
-//buttons for answer choices
-var choice1 = document.getElementById("btn1");
-var choice2 = document.getElementById("btn2");
-var choice3 = document.getElementById("btn3");
-var choice4 = document.getElementById("btn4");
-*/
 //Creating variables for needed elements ✔️
 var startButton = document.getElementById("startBtn")
 //When clicking "Start Quiz" on start page ✔️
@@ -150,45 +78,55 @@ var startQuiz = function() {
         var startTimer = setInterval(function() {
             document.getElementById("countdown").innerHTML=countdown; 
             countdown--;
-            if (countdown === 0) {
-                clearInterval(startTimer);
-                //var timesUp = document.querySelector(".timesup")
-                //timesUp.classList.add("timesup")
-                
+            if (countdown === -1) {
+                clearInterval(startTimer);   
+            }
+            if (countdown === -1) {
+                window.alert("Time is Up!");
+                return window.location.assign("./highscores.html");
             }
         }, 1000);
     
     availableQuestions = [... myQuestions];
     console.log(availableQuestions);
     getNewQuestion();
-    /*
-    //SOMETHING HERE
-    var output = [];
-    var choices; 
-    */
-    /*
-    //Show Questions
-        for (var i=0; i <myQuestions.length; i++) {
-            var thisItem = myQuestions[i];
-            console.log(thisItem);
-            choices = [];
-        }
-    //console.log(myQuestions.question);
-    */
 
 };
 
 var getNewQuestion = function() {
+    if(availableQuestions.length === 0 || questionCounter > maxQuestions)
+        return window.location.assign("./highscores.html");
+
     questionCounter++;
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
         question.innerText = currentQuestion.question;
 
-        //suggested converting to arrow function for functionality
+        //VS code suggested converting to arrow function for functionality
         choiceList.forEach(choice => {
             var number = choice.dataset['number'];
             choice.innerText = currentQuestion["choice" + number];
             console.log(choice);
         });
-    
+
+    availableQuestions.splice(questionIndex, 1);
+
+    //Allow user to answer questions (once all is loaded)
+    acceptAnswers = true;
 };
+ //Click to reference choice user selects   
+choiceList.forEach(choice => {
+    choice.addEventListener("click", function(){
+        //if not ready to accept answers
+        if(!acceptAnswers) return;
+        acceptAnswers = false;
+        var selectedChoice = event.target;
+        var selectedAnswer = selectedChoice.dataset["number"];
+            console.log(selectedAnswer);
+
+    getNewQuestion();
+
+    });
+});
+    
+
