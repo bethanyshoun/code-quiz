@@ -129,12 +129,11 @@ choiceList.forEach(choice => {
             if (selectedAnswer === currentQuestion.correct) {
                 answerResponse = 'correct';
                 resultCorrect.innerHTML = "correct";
-                //setTimeout(() => resultCorrect.remove(), 750);
+                setTimeout(() => resultCorrect.remove(), 750);
             } else if (selectedAnswer != currentQuestion.correct) {
-                //answerResponse = 'incorrect';
-                answerResponse = "incorrect"
+                answerResponse = "incorrect";
                 resultIncorrect.innerHTML = "incorrect";
-                //setTimeout(() => resultIncorrect.remove(), 750);
+                setTimeout(() => resultIncorrect.remove(), 750);
             }
             console.log(answerResponse);
         
@@ -143,3 +142,19 @@ choiceList.forEach(choice => {
 });
     
 
+//Timer begins counting back when start button is pushed
+
+// Question with answer choices appears
+
+
+//IF answer is incorrect time is subtracted from the clock AND INCORRECT appears on page
+
+//If answer is correct then CORRECT appears on page
+
+//Subsequent questions appear with same conditions
+
+//When all questions are answered OR the timeer reaches 0 the game is over
+
+//The score is the amount of time left on the clock
+
+//Player initials and score can be saved (HIGH SCORE)

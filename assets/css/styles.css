@@ -36,15 +36,12 @@ h2 {
 
 #startBtn {
     width: max-content;
-}
-
-button {
     color: purple;
     font-size: 50px;
     height: 70px;
-    width: 200px;
-
 }
+
+
 .hide {
     display: none;
 }
@@ -120,4 +117,20 @@ button {
 #result-incorrect {
     color: black;
     font-size: 30px;
+}
+
+/* High Scores */
+
+#clearBtn {
+    width: max-content;
+    color: purple;
+    font-size: 50px;
+    height: 70px;
+}
+
+#backBtn {
+    width: max-content;
+    color: purple;
+    font-size: 50px;
+    height: 70px;
 }
