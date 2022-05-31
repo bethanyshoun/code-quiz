@@ -15,7 +15,7 @@
             <a id="highscore" href="./highscores.html">Get High Score</a>
         </div>
         <h1>Coding Quiz</h1>
-            <p id="directions">Answer the questions before the clock runs out!</p>
+            <p id="directions">Answer the questions before the clock runs out! The time left will be your score. Incorrect responses will deduct 5 seconds from the timer.</p>
             <button id="startBtn">Start Quiz</button>
     </section>
     
@@ -32,14 +32,6 @@
             <h2 id="question">What is the answer to this question?</h2>
             <!-- Answer Choices-->
             <div class="answer-choices">
-                <!-- 
-                <form class="choice-btns" id="questionNumber">
-                    <button type="submit" id="btn1"></button>
-                    <button type="submit" id="btn2"></button>
-                    <button type="submit" id="btn3"></button>
-                    <button type="submit" id="btn4"></button>
-                </form>
-                -->
                 <p class="choice-letter">A</p>
                 <p class="choice-text" data-number="1">Choice 1</p>
             </div>
@@ -56,7 +48,10 @@
                 <p class="choice-text" data-number="4">Choice 4</p>
             </div>  
             <!-- Show result correct or incorrect -->
-            <div id="result"></div>
+            <div id="answer-validation">
+                <p id="result-correct"></p>
+                <p id="result-incorrect"></p>
+            </div> 
         </div>
     </section>
 

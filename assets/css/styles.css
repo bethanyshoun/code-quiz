@@ -112,3 +112,12 @@ button {
     padding: 8px; 
     width: 100%;
 }
+
+#result-correct {
+    color: black;
+    font-size: 30px;
+}
+#result-incorrect {
+    color: black;
+    font-size: 30px;
+}
